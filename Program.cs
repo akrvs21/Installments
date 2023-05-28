@@ -1,5 +1,8 @@
 ﻿
 using System;
+// using Twilio;
+// using Twilio.Rest.Api.V2010.Account;
+
 /**
  * Смартфон: рассрочка [3–9] месяцев
  * Компьютер: рассрочка [3–12] месяцев
@@ -44,8 +47,28 @@ class Program
                 break;
         }
 
+        /*sendSms(phoneNumber, productName, productSum);*/
+
         return productSum;
     }
+
+/*    public void sendSms(string phoneNumber, string productName, double productSum)
+    {
+        // Find your Account SID and Auth Token at twilio.com/console
+        // and set the environment variables. See http://twil.io/secure
+        string accountSid = Environment.GetEnvironmentVariable("TWILIO_ACCOUNT_SID");
+        string authToken = Environment.GetEnvironmentVariable("TWILIO_AUTH_TOKEN");
+    
+        TwilioClient.Init(accountSid, authToken);
+
+        var message = MessageResource.Create(
+        body: "Вы купили " + productName + ", общая сумма к оплате: " + productSum,
+        from: new Twilio.Types.PhoneNumber("+13609974067"), // virtual Twilio number
+        to: new Twilio.Types.PhoneNumber(phoneNumber)
+);
+
+
+    }*/
 
     public static void Main(string[] args)
     {
